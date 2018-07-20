@@ -172,12 +172,13 @@
   $radio_buttons = 0;
   for ($i=0, $n=sizeof($selection); $i<$n; $i++) {
 ?><div id="paymentMethodsOption-card" class="card mb-3">
+  <div id="paymentMethodsOption-card-header" class="card-header">
+  <div class="custom-control custom-radio custom-control-inline">  
 <?php
     if (sizeof($selection) > 1) {
         if (empty($selection[$i]['noradio'])) {
  ?>
-<div id="paymentMethodsOption-card-header" class="card-header">
-<div class="custom-control custom-radio custom-control-inline">
+
 <?php echo zen_draw_radio_field('payment', $selection[$i]['id'], ($selection[$i]['id'] == $_SESSION['payment'] ? true : false), 'id="pmt-'.$selection[$i]['id'].'"'); ?>
 <?php   } ?>
 <?php
